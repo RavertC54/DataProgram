@@ -12,11 +12,11 @@ yearlyAvg = 0
 for line in file:
     value = line.split(',')
     hits = int(value[8])
-    atBase = int(value[6])
+    atBat = int(value[6])
     statYear = int(value[1])
-    if atBase != 0:
+    if atBat != 0:
         if statYear == yearCounter:
-            avg = (hits / atBase)
+            avg = (hits / atBat)
             yearlyAvg += avg
             batterCount += 1
         else:
@@ -27,7 +27,7 @@ for line in file:
             yearCounter += 1
             batterCount = 0
             yearlyAvg = 0
-            avg = (hits / atBase)
+            avg = (hits / atBat)
             yearlyAvg += avg
             batterCount += 1
     else:
