@@ -1,4 +1,7 @@
-from matplotlib.pyplot import plot, bar, show
+#Crosby Ravert and Akshit Pathania
+#Pitt-Bradford: Object Oriented Programming, Spring 21
+from matplotlib.pyplot import plot, bar, show, subplots
+import matplotlib.pyplot as plt
 
 file = open("batting.csv")
 file.readline()
@@ -40,6 +43,8 @@ for line in file:
         continue
 
 
-bar = bar(year, bestAvg)
-chart = plot(year, battingAvg)
+fig, (ax1, ax2) = subplots(2)
+fig.suptitle("Average of yearly batting averages over the best average")
+ax1.plot(year, battingAvg)
+ax2.bar(year, bestAvg)
 show()
